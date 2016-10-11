@@ -1,0 +1,43 @@
+<div id="chat" data-name="<%= @chat.name %>">
+  <div class="dropdown pull-right">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      Actions
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li><%= link_to 'Join other chat', root_path %></li>
+      <li><%= link_to 'Leave chat', leave_chat_path(@chat.name), method: :post %></li>
+    </ul>
+  </div>
+
+  <h1>#<%= @chat.name %></h1>
+
+  <div class="row">
+    <aside class="col-sm-2">
+      <div class="panel panel-default">
+        <div class="panel-body" id="users_panel"  style="height: 24em; overflow: scroll;">
+          <ul class="list-unstyled" id="users_list">
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <section class="col-sm-10">
+      <div class="panel panel-default">
+        <div class="panel-body" id="messages_panel" style="height: 20em; overflow: scroll;">
+          <ul class="list-unstyled" id="messages"></ul>
+        </div>
+      </div>
+
+      <form id="message_form">
+        <div class="input-group">
+          <input type="text" name="message" class="form-control" />
+
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-default">Send</button>
+          </span>
+        </div>
+      </form>
+    </section>
+  </div>
+</div>

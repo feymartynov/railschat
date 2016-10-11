@@ -1,0 +1,16 @@
+<%= form_for @chat, method: :post do |f| %>
+  <% if @chat.errors.any? %>
+    <%= render 'shared/errors', errors: @chat.errors %>
+  <% end %>
+
+  <div class="form-group" style="margin-top: 10em;">
+    <div class="input-group">
+      <span class="input-group-addon">#</span>
+      <%= f.text_field :name, class: 'form-control input-lg', placeholder: 'Input chat name' %>
+
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary btn-lg">Join</button>
+      </span>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+development:
+  <<: *default
+  database: railschat_development
+
+test:
+  <<: *default
+  database: railschat_test
+
+production:
+  <<: *default
+  database: railschat_production
